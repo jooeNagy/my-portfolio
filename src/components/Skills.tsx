@@ -1,7 +1,6 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Database, Tool } from "lucide-react";
+import { Code, Database, Wrench } from "lucide-react";
 
 export const Skills = () => {
   const programmingSkills = [
@@ -78,7 +77,7 @@ export const Skills = () => {
           <Card className="bg-slate-800/50 border-slate-700 hover:border-pink-400/50 transition-all duration-300 hover-scale">
             <CardHeader>
               <CardTitle className="flex items-center text-pink-400">
-                <Tool className="w-6 h-6 mr-2" />
+                <Wrench className="w-6 h-6 mr-2" />
                 Tools & Methods
               </CardTitle>
             </CardHeader>
