@@ -1,0 +1,77 @@
+
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
+
+export const Hero = () => {
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Youssef Nagy
+            </span>
+          </h1>
+          
+          <div className="text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            Software Engineer - BackEnd Developer
+          </div>
+          
+          <div className="text-lg text-gray-400 mb-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            Port-Said, Egypt | Full Stack Web Developer specializing in Django & React
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            <Button 
+              className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 hover-scale"
+              onClick={() => window.open("mailto:ynagy0424@gmail.com")}
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              Contact Me
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 hover-scale"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download CV
+            </Button>
+          </div>
+
+          <div className="flex justify-center space-x-6 animate-fade-in" style={{ animationDelay: "0.8s" }}>
+            <a 
+              href="https://github.com" 
+              className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 hover-scale"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a 
+              href="https://linkedin.com" 
+              className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 hover-scale"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a 
+              href="mailto:ynagy0424@gmail.com" 
+              className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 hover-scale"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+
+        {/* Floating animation elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: "2s" }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: "4s" }}></div>
+        </div>
+      </div>
+    </section>
+  );
+};
