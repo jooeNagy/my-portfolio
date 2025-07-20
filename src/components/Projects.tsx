@@ -42,11 +42,12 @@ export const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="group relative bg-gradient-to-br from-slate-900/80 to-slate-800/60 border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover-scale overflow-hidden backdrop-blur-sm"
+        <div className="overflow-x-auto pb-6">
+          <div className="flex gap-6 w-max">
+            {projects.map((project, index) => (
+              <Card 
+                key={index} 
+                className="group relative bg-gradient-to-br from-slate-900/80 to-slate-800/60 border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover-scale overflow-hidden backdrop-blur-sm w-80 flex-shrink-0"
             >
               {/* Animated background gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -98,7 +99,8 @@ export const Projects = () => {
                 </div>
               </CardContent>
             </Card>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
