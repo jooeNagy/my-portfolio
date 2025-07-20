@@ -44,7 +44,7 @@ export const Education = () => {
                   <p className="text-gray-400 mb-2">Faculty of Computer Science and Informatics</p>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-400">Ismailia, Egypt</span>
-                    <span className="text-cyan-400">Oct 2021 - Present</span>
+                    <span className="text-cyan-400">Oct 2021 - july 2025</span>
                   </div>
                 </div>
 

@@ -13,7 +13,7 @@ export const Hero = () => {
             <div className="relative">
               <Avatar className="w-80 h-80 md:w-96 md:h-96 border-4 border-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 shadow-2xl">
                 <AvatarImage 
-                  src="/placeholder.svg" 
+                  src="/images/profile.jpg" 
                   alt="Youssef Nagy" 
                   className="object-cover"
                 />
@@ -37,7 +37,7 @@ export const Hero = () => {
               </h1>
               
               <div className="text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Software Engineer - BackEnd Developer
+                Software Engineer - Backend Developer
               </div>
               
               <div className="text-lg text-gray-400 mb-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -47,7 +47,7 @@ export const Hero = () => {
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
                 <Button 
                   className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 hover-scale"
-                  onClick={() => window.open("mailto:ynagy0424@gmail.com")}
+                  onClick={() => window.open("https://hopp.bio/youssef-nagy")}
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   Contact Me

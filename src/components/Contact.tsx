@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,29 +5,51 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "../lib/supabaseClient";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
-  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", message: "" });
-  };
+  const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { data, error } = await supabase
+      .from("messages")
+      .insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      ]);
+
+    if (error) {
+      console.error(error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    }
   };
 
   return (
@@ -78,7 +99,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-white font-semibold">Location</p>
-                  <p className="text-gray-400">Port-Said, Egypt</p>
+                  <p className="text-gray-400">Cairo, Egypt</p>
                 </div>
               </div>
             </CardContent>
@@ -92,7 +113,9 @@ export const Contact = () => {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="name" className="text-white">Name</Label>
+                  <Label htmlFor="name" className="text-white">
+                    Name
+                  </Label>
                   <Input
                     id="name"
                     name="name"
@@ -104,7 +127,9 @@ export const Contact = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-white">Email</Label>
+                  <Label htmlFor="email" className="text-white">
+                    Email
+                  </Label>
                   <Input
                     id="email"
                     name="email"
@@ -117,7 +142,9 @@ export const Contact = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="message" className="text-white">Message</Label>
+                  <Label htmlFor="message" className="text-white">
+                    Message
+                  </Label>
                   <textarea
                     id="message"
                     name="message"
@@ -129,7 +156,7 @@ export const Contact = () => {
                   />
                 </div>
 
-                <Button 
+                <Button
                   type="submit"
                   className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0"
                 >
@@ -144,7 +171,7 @@ export const Contact = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-8 border-t border-slate-700">
           <p className="text-gray-400">
-            © 2024 Youssef Nagy. Built with React & Tailwind CSS.
+            © 2025 Youssef Nagy. Built with React & Tailwind CSS.
           </p>
         </div>
       </div>

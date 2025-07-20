@@ -6,25 +6,25 @@ import { ExternalLink, Github } from "lucide-react";
 export const Projects = () => {
   const projects = [
     {
+      title: "Smart PharmaNet",
+      description: "An AI-driven network enabling real-time medicine tracking, intelligent redistribution between pharmacies, and patient-facing search to optimize healthcare supply chains.",
+      technologies: ["AI", "Real-time Tracking", "Healthcare", "Network"],
+      viewLink: "https://dashboard-509e8.web.app/start",
+      codeLink: "https://github.com/jooeNagy/Smart_PharmaNet"
+    },
+    {
       title: "ECommerce API",
       description: "E-Commerce platform using Django REST Framework, featuring JWT authentication, product/order management, and user reviews. Enabled secure user profiles, password resets, and CRUD operations via APIs.",
       technologies: ["Django", "REST API", "JWT", "PostgreSQL"],
       viewLink: "#",
-      codeLink: "#"
+      codeLink: "https://github.com/jooeNagy/ECommerce"
     },
     {
       title: "Todo API",
       description: "Developed a full-featured task management application using Django rest framework, allowing users to create, update and organize tasks.",
       technologies: ["Django", "REST API", "Task Management"],
       viewLink: "#",
-      codeLink: "#"
-    },
-    {
-      title: "Smart PharmaNet",
-      description: "An AI-driven network enabling real-time medicine tracking, intelligent redistribution between pharmacies, and patient-facing search to optimize healthcare supply chains.",
-      technologies: ["AI", "Real-time Tracking", "Healthcare", "Network"],
-      viewLink: "#",
-      codeLink: "#"
+      codeLink: "https://github.com/jooeNagy/to-do-list"
     }
   ];
 
