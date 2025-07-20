@@ -13,13 +13,6 @@ export const Projects = () => {
       codeLink: "#"
     },
     {
-      title: "QR Attendance System",
-      description: "An attendance system that uses QR codes that stores user in the database. Built with Django rest framework and PostgreSQL for Database.",
-      technologies: ["Django", "QR Codes", "PostgreSQL", "REST API"],
-      viewLink: "#",
-      codeLink: "#"
-    },
-    {
       title: "Todo API",
       description: "Developed a full-featured task management application using Django rest framework, allowing users to create, update and organize tasks.",
       technologies: ["Django", "REST API", "Task Management"],

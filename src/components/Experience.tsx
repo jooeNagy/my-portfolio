@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Users } from "lucide-react";
+import { Briefcase } from "lucide-react";
 
 export const Experience = () => {
   return (
@@ -14,7 +14,7 @@ export const Experience = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-300">
-            My professional journey and volunteer work
+            My professional journey
           </p>
         </div>
 
@@ -49,40 +49,6 @@ export const Experience = () => {
             </CardContent>
           </Card>
 
-          {/* Volunteer Experience */}
-          <Card className="bg-slate-800/50 border-slate-700 hover:border-purple-400/50 transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="flex items-center text-purple-400">
-                <Users className="w-6 h-6 mr-2" />
-                Volunteer Experience
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div className="border-l-2 border-cyan-400 pl-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold text-white">Mish Hackers - Organiser</h3>
-                    <span className="text-cyan-400 text-sm">Oct 2021 - Nov 2023</span>
-                  </div>
-                  <p className="text-gray-300 mb-4">
-                    Organized and coordinated hackathon events, fostering innovation and collaboration 
-                    among developers and tech enthusiasts.
-                  </p>
-                </div>
-
-                <div className="border-l-2 border-pink-400 pl-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold text-white">Mish Hackers - IT Vice Head</h3>
-                    <span className="text-pink-400 text-sm">Nov 2023 - Present</span>
-                  </div>
-                  <p className="text-gray-300 mb-4">
-                    Leading IT initiatives and technical aspects of events, mentoring participants 
-                    and ensuring smooth technical operations.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
