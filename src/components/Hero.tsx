@@ -41,7 +41,7 @@ export const Hero = () => {
               </div>
               
               <div className="text-lg text-gray-400 mb-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-                Port-Said, Egypt | Full Stack Web Developer specializing in Django & React
+                Cairo, Egypt
               </div>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
@@ -56,6 +56,7 @@ export const Hero = () => {
                 <Button 
                   variant="outline" 
                   className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 hover-scale"
+                  onClick={() => window.open("https://drive.google.com/file/d/10RzEkUUCRvZ36e2Ey6jWtAoWqghAmgRp/view?usp=sharing", "_blank")}
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Download CV
@@ -64,7 +65,7 @@ export const Hero = () => {
 
               <div className="flex justify-center lg:justify-start space-x-6 animate-fade-in" style={{ animationDelay: "0.8s" }}>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/jooeNagy" 
                   className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 hover-scale"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -72,7 +73,7 @@ export const Hero = () => {
                   <Github className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/youssef-nagy-848393254?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BhjtXV7o2ThmHv9vPLVLHVw%3D%3D" 
                   className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 hover-scale"
                   target="_blank"
                   rel="noopener noreferrer"
