@@ -10,7 +10,6 @@ import { supabase } from "../lib/supabaseClient";
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     message: "",
   });
 
@@ -31,7 +30,6 @@ export const Contact = () => {
       .insert([
         {
           name: formData.name,
-          email: formData.email,
           message: formData.message,
         },
       ]);
@@ -48,7 +46,7 @@ export const Contact = () => {
         title: "Message Sent!",
         description: "Thank you for your message. I'll get back to you soon!",
       });
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", message: "" });
     }
   };
 
