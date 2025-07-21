@@ -48,7 +48,7 @@ export const Hero = () => {
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
                 <Button 
                   className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 hover-scale"
-                  onClick={() => window.open("https://hopp.bio/youssef-nagy")}
+                  onClick={() => window.open("https://linktr.ee/y0ussf")}
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   Contact Me
