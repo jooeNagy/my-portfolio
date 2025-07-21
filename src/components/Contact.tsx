@@ -126,20 +126,7 @@ export const Contact = () => {
                   />
                 </div>
 
-                <div>
-                  <Label htmlFor="email" className="text-white">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-slate-700 border-slate-600 text-white mt-2"
-                    required
-                  />
-                </div>
+
 
                 <div>
                   <Label htmlFor="message" className="text-white">
