@@ -1,52 +1,54 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { db } from "../lib/firebase"; // Make sure firebase is initialized properly
-import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { supabase } from "../lib/supabaseClient";
 
-export default function ContactSection() {
-  const { toast } = useToast();
-
+export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  const { toast } = useToast();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
-    }));
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-      await addDoc(collection(db, "messages"), {
-        ...formData,
-        createdAt: Timestamp.now(),
-      });
+    const { data, error } = await supabase
+      .from("messages")
+      .insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      ]);
 
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error("Error sending message:", error);
-
+    if (error) {
+      console.error(error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description: "Failed to send message. Please try again.",
         variant: "destructive",
       });
+    } else {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: "", email: "", message: "" });
     }
   };
 
@@ -123,20 +125,9 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-white">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-slate-700 border-slate-600 text-white mt-2"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="message" className="text-white">Message</Label>
+                  <Label htmlFor="message" className="text-white">
+                    Message
+                  </Label>
                   <textarea
                     id="message"
                     name="message"

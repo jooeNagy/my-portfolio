@@ -1,4 +1,4 @@
-
+import profileImage from '@/assets/images/profile.jpg';
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -13,14 +13,15 @@ export const Hero = () => {
             <div className="relative">
               <Avatar className="w-80 h-80 md:w-96 md:h-96 border-4 border-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 shadow-2xl">
                 <AvatarImage 
-                  src="/images/profile.jpg" 
+                  src={profileImage}
                   alt="Youssef Nagy" 
-                  className="object-cover"
+                  className="object-cover mix-blend-normal"
+                  style={{ mixBlendMode: 'normal' }}
                 />
                 <AvatarFallback className="text-6xl font-bold bg-gradient-to-r from-cyan-500 to-purple-500 text-white">
                   YN
                 </AvatarFallback>
-              </Avatar>
+              </Avatar> 
               {/* Decorative elements around the image */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: "1s" }}></div>
